@@ -51,7 +51,7 @@ const updateExchangeRate = async () => {
     }
     
     let rate = data.rates[toCurr.value];
-    let finalAmount = amtVal * rate;
+    let finalAmount = (amtVal * rate).toFixed(6);
     msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
   } catch (error) {
     msg.innerText = "Failed to fetch the exchange rate. Please try again later.";
